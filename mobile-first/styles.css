@@ -1,0 +1,295 @@
+/*
+1. Posicionamiento
+2. Modelo caja (box model)
+3. Tipografía
+4. Visuales
+5. Otros
+*/
+:root {
+    /* Colores */
+    --linear-bg: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --sc-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --black: #282623;
+    --soft-black: #757575;
+    --product-black: #808080;
+    --grey: #BABABA;
+    --off-white: #FAF8F7;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Header */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: var(--linear-bg);
+}
+
+header img {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+
+.header-title-container {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+.header-title-container h1 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    color: var(--white);
+}
+
+.header-title-container p {
+    margin-top: 24px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+
+.header-title-container .header-button {
+    position: absolute;
+    top: 270px;
+    left: calc(50% - 114.5px);
+    display: block;
+    margin-top: 35px;
+    align-items: center;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background: var(--off-white);
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+
+.header-button span {
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/Vector-down.svg");
+}
+
+/* Main */
+main {
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    background: var(--off-white);
+}
+
+/* Exchange section */
+
+.main-exchange-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.main-exchange-container-title {
+    width: 90%;
+    min-width: 288px;
+    max-height: 900px;
+    margin: 0 autos;
+    align-self: center;
+}
+
+.main-exchange-container .backgroundImg {
+    margin: 50px 0 40px 0;
+    width: 195px;
+    height: 195px;
+    background-image: url("./assets/imgs/Bitcoin.svg");
+    align-self: center;
+}
+
+.main-exchange-container-title h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+
+.main-exchange-container-title p {
+    margin-top: 24px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-black);
+}
+
+.main-currency-table {
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 310px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-currency-table .currency-table-title {
+    margin: 48px 0 12px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+
+.currency-table-container {
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 159px;
+    margin: 0 auto;
+}
+
+.currency-table-container table {
+    margin: 0 auto;
+    width: 197px;
+    height: 159px;
+}
+
+.currency-table-container td {
+    text-align: start;
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background: var(--white);
+    padding: 10px 12px 10px 12px;
+}
+
+.currency-table-container .table__top-left {
+    border-radius: 15px 0 0 0;
+}
+
+.currency-table-container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+.currency-table-container .table__botton-left {
+    border-radius: 0 0 0 15px;
+}
+
+.currency-table-container .table__botton-right {
+    border-radius: 0 0 15px 0;
+}
+
+.currency-table-container .table__right {
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: var(--soft-black);
+}
+
+.currency-table-container .down {
+    display: inline-block;
+    margin-left: 10px;
+    width: 12px;
+    height: 12px;
+    background-image: url("./assets/icons/trending-down.svg");
+}
+
+.currency-table-container .up {
+    display: inline-block;
+    margin-left: 10px;
+    width: 12px;
+    height: 12px;
+    background-image: url("./assets/icons/trending-up.svg");
+}
+
+.main-exchange-container .currency-table-date {
+    margin: 16px auto;
+    width: 190px;
+    height: 31px;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+    background: var(--soft-orange);
+    border-radius: 8px;
+}
+
+.main-exchange-container .currency-table-date p {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+/* Product detail */
+.main-product-detail {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warm-black);
+}
+
+.product-detail-batata-logo {
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    top: -12px;
+    left: calc(50% - 20px);
+    background-image: url("./assets/imgs/logo-2.svg");
+}
+
+.product-detail-title {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.product-detail-title h2 {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    color: var(--white);
+}
+
+.product-detail-title p {
+    margin-bottom: 32px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--product-black);
+}
