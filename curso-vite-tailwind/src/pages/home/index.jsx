@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Card from "../../components/card";
 import Layout from "../../components/layout";
+import ProductDetail from "../../components/productDetail";
+import CheckoutSideMenu from "../../components/checkoutSideMenu";
 
 function Home() {
   const [items, setItems] = useState([]);
@@ -25,12 +27,15 @@ function Home() {
               key={item.id}
               name={item.title}
               price={item.price}
-              url={item.images[0]}
+              url={item.images}
               category={item.category.name}
+              description={item.description}
             />
           );
         })}
       </div>
+      <CheckoutSideMenu />
+      <ProductDetail />
     </Layout>
   );
 }

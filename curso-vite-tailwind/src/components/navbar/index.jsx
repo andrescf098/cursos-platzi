@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import NavElement from "./NavItem";
 import { ShoppingCartContext } from "../../context";
 import { useContext } from "react";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
   const context = useContext(ShoppingCartContext);
@@ -41,7 +42,17 @@ const Navbar = () => {
         <li>
           <NavElement to="/sign-in">Sign In</NavElement>
         </li>
-        <li>{context.count}</li>
+        <li
+          className="w-9 h-9 cursor-pointer"
+          onClick={() => {
+            context.setIsCheckoutSideMenuOpen((current) => !current);
+          }}
+        >
+          <ShoppingCartIcon className="w-6 h-6 text-black" />
+          <div className="relative flex justify-center items-center w-4 h-4 top-[-12px] left-[12px] rounded-full bg-red-400 text-white font-light">
+            {context.count}
+          </div>
+        </li>
       </ul>
     </nav>
   );
