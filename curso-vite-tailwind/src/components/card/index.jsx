@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../context";
-import { PlusSmallIcon } from "@heroicons/react/24/outline";
+import { PlusSmallIcon, CheckIcon } from "@heroicons/react/24/outline";
 
-const Card = ({ key, name, price, url, category, description }) => {
+const Card = ({ id, name, price, url, category, description }) => {
   const context = useContext(ShoppingCartContext);
   const showProduct = (name, price, url, category, description) => {
     context.openProductDetail();
@@ -17,7 +17,7 @@ const Card = ({ key, name, price, url, category, description }) => {
   };
   const addProductToCart = (
     event,
-    key,
+    id,
     name,
     price,
     url,
@@ -25,7 +25,7 @@ const Card = ({ key, name, price, url, category, description }) => {
     description
   ) => {
     const product = {
-      key,
+      id,
       name,
       price,
       url,
@@ -34,7 +34,36 @@ const Card = ({ key, name, price, url, category, description }) => {
     };
     event.stopPropagation();
     context.setCartProducts([...context.cartProducts, product]);
-    context.setCount(context.count + 1);
+  };
+  const renderIcon = (id) => {
+    const isInCart =
+      context.cartProducts.filter((product) => product.id === id).length > 0;
+    if (isInCart) {
+      return (
+        <div className="absolute top-0 right-0 flex justify-center items-center bg-gray-500 w-6 h-6 rounded-full m-2 p-1">
+          <CheckIcon className="w-4 h-4 text-white" />
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
+          onClick={(event) => {
+            addProductToCart(
+              event,
+              id,
+              name,
+              price,
+              url,
+              category,
+              description
+            );
+          }}
+        >
+          <PlusSmallIcon className="w-4 h-4 text-black/60" />
+        </div>
+      );
+    }
   };
   return (
     <div
@@ -52,24 +81,9 @@ const Card = ({ key, name, price, url, category, description }) => {
           src={url}
           alt="headphones"
         />
-        <div
-          className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-          onClick={(event) => {
-            addProductToCart(
-              event,
-              key,
-              name,
-              price,
-              url,
-              category,
-              description
-            );
-          }}
-        >
-          <PlusSmallIcon className="w-4 h-4 text-black/60" />
-        </div>
+        {renderIcon(id)}
       </figure>
-      <p className="flex justify-between">
+      <p className="flex items-center justify-between px-2">
         <span className="text-sm font-light">{name}</span>
         <span className="text-lg font-semibold">$ {price}</span>
       </p>
@@ -78,7 +92,7 @@ const Card = ({ key, name, price, url, category, description }) => {
 };
 
 Card.propTypes = {
-  key: PropTypes.number,
+  id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   url: PropTypes.array,

@@ -8,11 +8,36 @@ import SignIn from "../signin";
 import "../../App.css";
 import Navbar from "../../components/navbar";
 import { ShoppingCartPrivider } from "../../context";
+import CheckoutSideMenu from "../../components/checkoutSideMenu";
 
 const AppRoutes = () => {
   const routes = useRoutes([
     {
       path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/all",
+      element: <Home />,
+    },
+    {
+      path: "/clothes",
+      element: <Home />,
+    },
+    {
+      path: "/electronics",
+      element: <Home />,
+    },
+    {
+      path: "/furnitures",
+      element: <Home />,
+    },
+    {
+      path: "/toys",
+      element: <Home />,
+    },
+    {
+      path: "/others",
       element: <Home />,
     },
     {
@@ -26,6 +51,14 @@ const AppRoutes = () => {
     {
       path: "/my-orders",
       element: <MyOrders />,
+    },
+    {
+      path: "/my-orders/last",
+      element: <MyOrder />,
+    },
+    {
+      path: "/my-orders/:id",
+      element: <MyOrder />,
     },
     {
       path: "/sign-in",
@@ -43,8 +76,9 @@ const App = () => {
   return (
     <ShoppingCartPrivider>
       <BrowserRouter>
-        <Navbar />
         <AppRoutes />
+        <Navbar />
+        <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartPrivider>
   );

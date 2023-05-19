@@ -1,30 +1,24 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import Card from "../../components/card";
 import Layout from "../../components/layout";
 import ProductDetail from "../../components/productDetail";
-import CheckoutSideMenu from "../../components/checkoutSideMenu";
+import { ShoppingCartContext } from "../../context";
 
 function Home() {
-  const [items, setItems] = useState([]);
-  const productsGet = async () => {
-    try {
-      const response = await fetch("https://api.escuelajs.co/api/v1/products");
-      const data = await response.json();
-      setItems(data);
-    } catch (error) {
-      console.error(error);
-    }
+  const context = useContext(ShoppingCartContext);
+  const renderCards = () => {
+    return context.filteredItems?.length > 0
+      ? context.filteredItems
+      : context.items;
   };
-  useEffect(() => {
-    productsGet();
-  }, []);
   return (
     <Layout>
       <div className="flex flex-wrap gap-5 justify-center">
-        {items?.map((item) => {
+        {renderCards().map((item) => {
           return (
             <Card
               key={item.id}
+              id={item.id}
               name={item.title}
               price={item.price}
               url={item.images}
@@ -34,7 +28,6 @@ function Home() {
           );
         })}
       </div>
-      <CheckoutSideMenu />
       <ProductDetail />
     </Layout>
   );
