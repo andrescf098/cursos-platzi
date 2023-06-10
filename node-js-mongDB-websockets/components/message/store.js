@@ -4,14 +4,22 @@ async function addMessage(message) {
   const myMessage = new Model(message);
   myMessage.save();
 }
-async function getMessages(filterMessages) {
+
+async function getMessages(filters) {
   let filter = {};
-  if (filterMessages !== null) {
-    filter = { user: filterMessages };
+  for (const key in filters) {
+    if (filters[key]) {
+      filter[key] = filters[key];
+    }
   }
-  const messages = await Model.find(filter);
-  return messages;
+  try {
+    const messages = await Model.find(filter).populate("user");
+    return messages;
+  } catch (error) {
+    throw new Error(error);
+  }
 }
+
 async function updateText(id, message) {
   const foundMessage = await Model.findOne({
     _id: id,
@@ -20,6 +28,7 @@ async function updateText(id, message) {
   const newMessage = await foundMessage.save();
   return newMessage;
 }
+
 function removeMessage(id) {
   Model.deleteOne({
     _id: id,

@@ -1,5 +1,11 @@
 const store = require("./store");
 
+function getUsers() {
+  return new Promise((resolve, reject) => {
+    resolve(store.list());
+  });
+}
+
 function addUser(name) {
   if (!name) {
     return Promise.reject("Invalid name");
@@ -10,4 +16,4 @@ function addUser(name) {
   return store.add(user);
 }
 
-module.exports = { addUser };
+module.exports = { addUser, getUsers };
