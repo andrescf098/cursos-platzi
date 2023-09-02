@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #ffefe7;
+}
+
+nav {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  color: #7c6a0a;
+}
+nav p {
+  font-size: 1.5em;
+  padding-left: 30px;
+}
+nav .icons {
+  display: flex;
+  gap: 1;
+}
+nav .icons button {
+  background: none;
+  border: none;
+}
+
+article {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  color: #7c6a0a;
+  padding: 0 45px;
+  row-gap: 15px;
+}
+article .impact-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  gap: 25px;
+}
+article h1 {
+  font-size: 3em;
+  padding: 0;
+}
+article p {
+  font-size: 1.5em;
+}
+article button {
+  width: 12vw;
+  padding: 20px;
+  background: #fa9500;
+  border: none;
+  border-radius: 35px;
+  color: white;
+  font-size: 1em;
+}
+article .image-section img {
+  width: 25vw;
+  border-radius: 19px;
+}
+
+section {
+  width: 100%;
+  min-width: 243px;
+  height: auto;
+  padding: 60px;
+}
+section h2 {
+  color: #7c6a0a;
+  font-size: 2em;
+}
+section .healthcare h2 {
+  font-weight: 300;
+  padding-bottom: 60px;
+}
+section .healthcare .card-section {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+}
+section .healthcare .card-section .product-card {
+  width: 14vw;
+  height: 45vh;
+  background: #ffdac6;
+  color: #7c6a0a;
+  padding: 20px;
+  border-radius: 6px;
+}
+section .healthcare .card-section .product-card .icon {
+  position: absolute;
+  right: -185px;
+  width: 100%;
+  display: flex;
+}
+section .healthcare .card-section .product-card .icon svg {
+  width: 26px;
+  height: 26px;
+  color: #7c6a0a;
+}
+section .healthcare .card-section .product-card .product-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .healthcare .card-section .product-card .product-image img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+
+footer {
+  background-color: #fa9500;
+  width: 100%;
+  height: 250px;
+}/*# sourceMappingURL=main.css.map */
