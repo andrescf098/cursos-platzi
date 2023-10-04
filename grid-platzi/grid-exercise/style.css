@@ -1,0 +1,7 @@
+.container {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 1px solid black;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+}

@@ -1,0 +1,51 @@
+:root {
+    --skin: #f6c09c;
+    --background: #ed4042;
+    --red: #ed2850;
+    --dark-red: #680524;
+    --black: #00243a;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    place-content: center / center;
+}
+
+.head {
+    width: 100px;
+    height: 200px;
+    background: var(--skin);
+    border-radius: 50px;
+    position: relative;
+}
+
+.eye-left {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 40px;
+    background: var(--white);
+    border-radius: 100%;
+}
+
+.eye-right {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 40px;
+    right: 20px;
+    background: var(--white);
+    border-radius: 100%;
+}
