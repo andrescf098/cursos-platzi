@@ -1,0 +1,10 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "vue"
+  ],
+  "rootDir": ".",
+  "testEmvironment": "node",
+  "testRegex": ".e2e.js$"
+}
