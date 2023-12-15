@@ -1,0 +1,3 @@
+(() => {
+  let productPrice = 100;
+})()
