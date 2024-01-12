@@ -1,0 +1,348 @@
+:root {
+    --grass: #6CAD18;
+    --dirt1: #9b7653;
+    --dirt2: #ad8b6c;
+}
+
+body {
+    margin: 0;
+    height: 100dvh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    counter-reset: score;
+}
+
+.phone {
+    height: 600px;
+    width: 300px;
+    position: relative;
+    border: 8px solid black;
+    border-radius: 40px;
+    background: #CCEEFF;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+}
+
+.mountains {
+    background: var(--grass);
+    border-radius: 18px;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.layer-1 {
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+    animation: layer 1s ease-in-out infinite;
+}
+
+.layer-2 {
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    left: 60px;
+    animation: layer 1.5s ease-in-out infinite;
+}
+
+.layer-3 {
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+}
+
+.layer-4 {
+    left: 15px;
+    bottom: 0;
+    height: 350px;
+    width: 80px;
+    z-index: 4;
+    animation: layer 0.5s ease-in-out infinite;
+}
+
+.layer-5 {
+    bottom: 0;
+    height: 300px;
+    width: 200px;
+    z-index: 5;
+}
+
+.layer-6 {
+    right: 30px;
+    bottom: 0;
+    height: 250px;
+    width: 80px;
+    z-index: 6;
+    animation: layer 2s ease-in-out infinite;
+}
+
+.layer-7 {
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    width: 150px;
+    z-index: 7;
+}
+
+.layer-8 {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    width: 200px;
+    margin: 0 auto;
+    z-index: 8;
+}
+
+.layer-9 {
+    bottom: 0;
+    height: 100px;
+    width: 120px;
+    z-index: 9;
+}
+
+.layer-10 {
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 120px;
+    z-index: 10;
+}
+
+.left-ear--outer {
+    background: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+
+.left-ear--inner {
+    background: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+
+.right-ear--outer {
+    background: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+
+.right-ear--inner {
+    background: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+
+.head {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    height: 80px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 30px;
+    margin: 0 auto;
+}
+
+.head__eye {
+    background: gray;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    top: 15px;
+    position: absolute;
+    animation: blink 2s infinite;
+}
+
+.head__eye--left {
+    left: 30px;
+}
+
+.head__eye--right {
+    right: 30px;
+}
+
+.grass--pattern {
+    position: absolute;
+    top: 15px;
+    height: 20px;
+    width: 100%;
+    background: #e5e5f7;
+    opacity: 1;
+    background-image: linear-gradient(135deg, #6CAD18 25%, transparent 25%), linear-gradient(225deg, #6CAD18 25%, transparent 25%), linear-gradient(45deg, var(--dirt2) 25%, transparent 25%), linear-gradient(315deg, var(--dirt2) 25%, var(--dirt1) 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    overflow: hidden;
+}
+
+.dirt {
+    position: absolute;
+    top: 35px;
+    height: 200px;
+    width: 100%;
+    background-color: var(--dirt2);
+}
+
+.dirt--layer7 {
+    position: absolute;
+    top: 35px;
+    height: 100px;
+    width: 100%;
+    background-color: var(--dirt2);
+}
+
+.layer-9__right-cloud {
+    background: white;
+    border-radius: 0 40px 30px 0;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    left: 80px;
+    position: absolute;
+    width: 40px;
+}
+
+.layer-9__left-cloud {
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    width: 80px;
+}
+
+.layer-8__left-lawn {
+    background: var(--grass);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 70%;
+    left: 0;
+    position: absolute;
+    width: 80px;
+}
+
+.layer-8__center-lawn {
+    background: var(--grass);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 100%;
+    left: 60px;
+    position: absolute;
+    width: 80px;
+}
+
+.layer-8__right-lawn {
+    background: var(--grass);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 80%;
+    left: 130px;
+    position: absolute;
+    width: 80px;
+}
+
+.layer-10__left-cloud {
+    background: white;
+    border-radius: 40px 0 0 30px;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    right: 80px;
+    position: absolute;
+    width: 40px;
+}
+
+.layer-10__right-cloud {
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    width: 80px;
+}
+
+@keyframes blink {
+    0% {
+        height: 4px;
+    }
+
+    5% {
+        transform: translate(0px, 2px);
+        height: 1px;
+    }
+
+    10% {
+        transform: translate(0px, 0px);
+        height: 4px;
+    }
+}
+
+@keyframes layer {
+    0% {
+        bottom: 0;
+    }
+
+    25% {
+        bottom: -80px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+input[type=checkbox] {
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    top: 0;
+    margin: 0;
+    width: 80px;
+    height: 50px;
+    z-index: 2;
+}
+
+input[type=checkbox]:focus {
+    appearance: none;
+    outline: none;
+}
+
+input:checked {
+    counter-increment: score;
+}
+
+.score::after {
+    content: counter(score);
+}
