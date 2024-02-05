@@ -6,6 +6,7 @@ import type { ImgHTMLAttributes } from 'react';
 interface LazyImageProps {
   image: string;
   alt: string;
+  onLazyLoad?: () => void;
 }
 type ImageNativeTypes = ImgHTMLAttributes<HTMLImageElement>;
 
